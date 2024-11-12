@@ -1,4 +1,4 @@
-from Main import Asiento, Motor, Auto
+from main import Asiento, Motor, Auto
 
 
 def testAtributosMotor():
