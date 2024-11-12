@@ -15,6 +15,7 @@ class Asiento:
 
 class Auto:
      #Atributo de clase
+     
      cantidadCreados = 0
      
      #Inicializador, atributos de instancia
