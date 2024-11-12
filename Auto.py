@@ -1,5 +1,37 @@
-from Asiento import Asiento
-from Motor import Motor
+
+
+
+
+
+
+class Asiento:
+    def __init__(self, color, registro):
+        self.color = color
+        self.registro = registro
+
+    def cambiarColor(self, color_elegido):
+        if color_elegido in ("rojo","verde","amarillo","negro","blanco"):
+            self.color = color_elegido
+
+
+class Motor:
+    def __init__(self, numeroCilindros, tipo, registro):
+        self.numeroCilindros = numeroCilindros
+        self.tipo = tipo
+        self.registro = registro
+    
+    def cambiarRegistro(self, reg):
+        self.registro = reg
+
+    def asignarTipo(self, tip):
+        if tip == "electrico":
+            self.tipo = tip
+        elif tip == "gasolina":
+            self.tipo = tip
+        else:
+            pass
+
+
 class Auto:
     cantidadCreados = 0
     def __init__(self, modelo, precio, asientos, marca, motor, registro):
@@ -34,21 +66,3 @@ class Auto:
 
         
 
-
-
-
-
-# Crear un motor con un registro específico
-motor1 = Motor(4, "gasolina", 1234)
-
-# Crear asientos con registros coincidentes o no
-asiento1 = Asiento("rojo", 1234)
-asiento2 = Asiento("negro", 12434)
-asiento3 = Asiento("azul", 1234)  # Este asiento tiene un registro diferente
-
-# Crear un auto con un registro, motor y lista de asientos
-auto1 = Auto("Sedán", 25000, [asiento1, asiento2, asiento3], "Toyota", motor1, 1234)
-
-# Testear el método verificarIntegridad
-print(auto1.verificarIntegridad())
- # Debería devolver "Las piezas no son originales"
