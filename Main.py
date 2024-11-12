@@ -3,6 +3,7 @@ class Asiento:
      def __init__(self,color,precio,registro):
          self.color = color
          self.precio = precio
+         
          self.registro = registro
 
      #Los metodos de instancia llevan siempre como primer parametro la palabra self
