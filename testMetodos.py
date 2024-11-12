@@ -1,4 +1,4 @@
-from main import Asiento, Motor, Auto
+from main1 import Asiento, Motor, Auto
 
 def testMetodoCambiarColor():
     a1 = Asiento("blanco", 5000, 435)
