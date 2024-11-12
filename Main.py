@@ -51,7 +51,7 @@ class Auto:
                     return("Las piezas no son originales")
                 else:
                     return("Auto original")
-        #Como el if no fue verdad, entonces retorne el siguiente texto
+
         return("Las piezas no son originales")
 
         
