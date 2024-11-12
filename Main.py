@@ -1,9 +1,4 @@
 
-
-
-
-
-
 class Asiento:
     def __init__(self, color, registro):
         self.color = color
@@ -65,4 +60,8 @@ class Auto:
                 return "Las piezas no son originales"
 
         
+
+
+
+
 
