@@ -5,7 +5,7 @@ class Asiento:
         self.registro = registro
 
     def cambiarColor(self, color_elegido):
-        if color_elegido in ("rojo","verde","amarillo","negro","blanco"):
+        if color_elegido in ("rojo", "verde", "amarillo", "negro", "blanco"):
             self.color = color_elegido
 
 
@@ -14,52 +14,40 @@ class Motor:
         self.numeroCilindros = numeroCilindros
         self.tipo = tipo
         self.registro = registro
-    
+
     def cambiarRegistro(self, reg):
         self.registro = reg
 
     def asignarTipo(self, tip):
-        if tip == "electrico":
+        if tip in ("electrico", "gasolina"):
             self.tipo = tip
-        elif tip == "gasolina":
-            self.tipo = tip
-        else:
-            pass
 
 
 class Auto:
-    cantidadCreados = 0
+    cantidadCreados = 0  # Atributo de clase
+
     def __init__(self, modelo, precio, asientos, marca, motor, registro):
         self.modelo = modelo
         self.precio = precio
-        self.asientos = asientos
+        self.asientos = asientos  # Lista de objetos Asiento
         self.marca = marca
-        self.motor = motor
+        self.motor = motor  # Objeto Motor
         self.registro = registro
+        Auto.cantidadCreados += 1
 
     def cantidadAsientos(self):
-        contador = 0
-        for i in self.asientos:
-            if isinstance(i,Asiento):
-                contador += 1
-        return contador
-    
+        return sum(1 for asiento in self.asientos if isinstance(asiento, Asiento))
+
     def verificarIntegridad(self):
-        reg_auto = self.registro
-        if reg_auto != self.motor.registro:
+        if self.registro != self.motor.registro:
             return "Las piezas no son originales"
-            
-        else:
-            verificador = 0
-            for asiento in self.asientos:
-                if asiento.registro != reg_auto:
-                    verificador = 1
-            if verificador == 0:
-                return "Auto original"
-            else:
+
+        for asiento in self.asientos:
+            if not isinstance(asiento, Asiento) or asiento.registro != self.registro:
                 return "Las piezas no son originales"
 
-        
+        return "Auto original"
+
 
 
 
