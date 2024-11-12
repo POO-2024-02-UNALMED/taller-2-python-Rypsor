@@ -41,6 +41,7 @@ class Auto:
         return (cantidad)
      
      def verificarIntegridad(self):
+        
         #Los metodos de instancia los usan instancias/objetos, por eso siempre llevan el self
         #Ese self, se reemplaza por el objeto que esta llamando al metodo
         #nombre_del_objeto.nombre_del_atributo
